@@ -1,0 +1,71 @@
+.nav-bar {
+  /* Main/Blue */
+
+  background: #d4ddee;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fanisfun {
+  height: 32px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  /* Main/Blue */
+
+  color: #3c64b1 !important;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  width: 119px;
+  height: 38px;
+  background: #ffffff;
+  border-radius: 20px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.search_text {
+  width: 70px;
+  height: 18px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.upcoming-div{
+    justify-content: space-between;
+}
+
+.text-color {
+  /* Semibold/14px */
+
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+
+  color: #373f41;
+  padding-right: 20px;
+}
