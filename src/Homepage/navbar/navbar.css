@@ -2,10 +2,14 @@
   /* Main/Blue */
 
   background: #d4ddee;
+  overflow-x: hidden;
 }
 .nav-container {
   display: flex;
   justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
 }
 
 .fanisfun {
@@ -31,6 +35,8 @@
   border-radius: 20px;
   justify-content: center;
   padding-top: 10px;
+  margin-left: 10rem;
+  
 }
 
 .search_text {
@@ -48,8 +54,10 @@
   height: 20px;
 }
 
-.upcoming-div{
-    justify-content: space-between;
+.upcoming-div {
+  justify-content: space-between;
+  margin-left: 19rem;
+   
 }
 
 .text-color {
@@ -68,4 +76,30 @@
 
   color: #373f41;
   padding-right: 20px;
+}
+
+.login-button {
+  background: #3c64b1;
+  max-width: 100px;
+  height: 42px;
+  color: white;
+}
+
+.settings-icon {
+  border: 1.5px solid #737b7d;
+  height: 18.333332061767578px;
+  border-radius: 0px;
+  margin-right: 1.5rem;
+}
+.notification-icon {
+  border: 1.5px solid #737b7d;
+  height: 20px;
+  width: 15px;
+  border-radius: 0px;
+  margin-right: 1.5rem;
+ 
+}
+
+.right-icon{
+   text-align: center;
 }
