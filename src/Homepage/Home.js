@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './navbar/Navbar'
 import Carousel from './carousel/Carousel'
 import SecondCarousel from './secondCarousel/SecondCarousel'
+import Faq from './faq/Faq'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Navbar/>
         <Carousel/>
         <SecondCarousel/>
+        <Faq/>
     
     </div>
   )

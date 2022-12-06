@@ -79,6 +79,10 @@ export default function SecondCarousel() {
                 <p className="football-text">Znarok Oleg</p>
               </div>
             </div>
+
+           
+
+            
           </div>
         </div>
       </Carousel.Item>
