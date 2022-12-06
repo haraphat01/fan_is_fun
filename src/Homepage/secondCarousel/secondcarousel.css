@@ -1,0 +1,45 @@
+.carousel-div1 {
+  background: #ffffff;
+  border-radius: 10px;
+}
+.football {
+  width: 241px;
+  height: 241px;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.football-text {
+  font-family: 'Mulish';
+  font-style: normal;
+  text-align: center;
+  font-size: 32px;
+  line-height: 18px;
+  margin-top: 2rem;
+}
+.browse-by-sport {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.video {
+  height: 796px;
+  width: 391px;
+  left: 222px;
+  top: 293px;
+  border-radius: 0px;
+}
+
+.popular1 {
+  height: 474px;
+  width: 391px;
+  left: 240px;
+  top: 334px;
+  border-radius: 35px;
+}
