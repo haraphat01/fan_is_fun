@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Readex+Pro:wght@400,500,600,700;400&display=swap");
+
+body,
+html {
+  font-family: "Readex Pro", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navlink {
+  color: rgb(243, 119, 47);
+}
+.navlink:hover {
+  color: #f3c051;
+}
+.navlink.isActive {
+  color: #f3c051;
+}
+
+.brand-name {
+  font-size: 20px;
+  color: rgb(243, 119, 47);
+  display: flex;
+  flex-direction: row;
+}
+
+.brand-name:hover {
+  color: #f3c051;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.feed-card {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #d5d5d5;
+  min-height: 325px;
+}
+
+.feed-card::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #f1e7cf;
+  background: linear-gradient(#f1dcb0, rgba(105, 84, 39, 0.959));
+  transform: rotate(15deg);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.feed-card:hover::after {
+  transform: rotate(0deg);
+}
+
+/* responsive layouts */
+@media (max-width: 767.98px) {
+  .feed-card {
+    min-height: 225px;
+    transition: none;
+  }
+}
