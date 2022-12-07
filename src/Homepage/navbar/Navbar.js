@@ -1,8 +1,8 @@
 import React from 'react';
 import './navbar.css';
 import searchIcon from '../../assets/images/search_icon.jpg';
-import notification from '../../assets/images/notification.png';
-import setting from '../../assets/images/setting.png';
+import notification from '../../assets/images/notification.svg';
+import setting from '../../assets/images/setting.svg';
 
 export default function Navbar() {
   return (
