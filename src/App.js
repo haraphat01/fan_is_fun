@@ -13,10 +13,14 @@ import Search from "./containers/search";
 
 function App() {
   return (
-    <div className="App">
-     <Home/>
-     HOME
-    </div>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+        </Routes>
+      </MainLayout>
+    </BrowserRouter>
   );
 }
 
