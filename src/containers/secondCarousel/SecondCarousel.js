@@ -52,31 +52,31 @@ export default function SecondCarousel() {
             <div className="d-flex justify-content-around">
               <div className="div-container2 ">
                 <img className="video" src={video} alt="First slide" />
-                <p className="football-text">Football</p>
+                <p className="video-text">Video Calls</p>
               </div>
               <div className="div-container2">
                 <img className="" src={business} alt="First slide" />
-                <p className="football-text">Hockey</p>
+                <p className=" business-text ">Business</p>
               </div>
               <div className="div-container2">
                 <img className="" src={offline} alt="First slide" />
-                <p className="football-text">Volleyball</p>
+                <p className="offline-text">Offline act</p>
               </div>
             </div>
 
             <p className="browse-by-sport">Popular</p>
             <div className="d-flex justify-content-around">
               <div className="div-container2 ">
-                <img className="popular1" src={popular1} alt="First slide" />
-                <p className="football-text">Sergachev Mikhail</p>
+                <img className="" src={popular1} alt="First slide" />
+                <p className="popular1-text">Sergachev Mikhail</p>
               </div>
               <div className="div-container2">
-                <img className="popular1" src={popular2} alt="First slide" />
-                <p className="football-text">Dzyuba Artem</p>
+                <img className="popular1-text{" src={popular2} alt="First slide" />
+                <p className="popular1-text">Dzyuba Artem</p>
               </div>
               <div className="div-container2">
-                <img className="popular1" src={popular3} alt="First slide" />
-                <p className="football-text">Znarok Oleg</p>
+                <img className="" src={popular3} alt="First slide" />
+                <p className="popular1-text">Znarok Oleg</p>
               </div>
             </div>
           </div>
