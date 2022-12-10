@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/mainLayout";
 import HomePage from "./containers/homepage/Home";
 import Search from "./containers/search";
+import Profile from "./containers/profile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          <Route path="/profile/:userId" element={<Profile />}></Route>
         </Routes>
       </MainLayout>
     </BrowserRouter>

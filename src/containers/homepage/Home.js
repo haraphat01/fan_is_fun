@@ -1,6 +1,7 @@
 import React from "react";
 import SportList from "../../components/sportlist";
 import HeaderSlider from "../../components/headerSlider";
+import Faq from "../faq/Faq";
 import PopularList from "../../components/popularList";
 import img_signupbg from "../../assets/images/signup-bg.jpg";
 import { Fade } from "react-awesome-reveal";
@@ -25,6 +26,7 @@ export default function Home() {
           <h3 className="pb-3">Sport categories</h3>
           <SportList />
         </section>
+
         {/* signup call to action */}
         <section className="mt-5 border rounded overflow-hidden">
           <div className="container">
@@ -50,6 +52,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         {/* activities */}
         <section className="mt-4 mb-5">
           <h3 className="pb-3">Activities</h3>
@@ -115,6 +118,8 @@ export default function Home() {
           <h3>Popular athletes</h3>
           <PopularList />
         </section>
+        {/* faq */}
+        <Faq />
       </div>
     </>
   );

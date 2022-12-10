@@ -3,59 +3,12 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import Card from "./card";
+import { useNavigate } from "react-router-dom";
+import celebrities from "../../mockApi/celebData";
 
 SwiperCore.use([Navigation, Pagination]);
 
-function PopularCarousel({
-  list = [
-    {
-      name: "Will Clyburn",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Will_Clyburn_21_PBC_CSKA_Moscow_EuroLeague_20180316_%281%29.jpg/450px-Will_Clyburn_21_PBC_CSKA_Moscow_EuroLeague_20180316_%281%29.jpg",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Andrei Markov",
-      image:
-        "https://conwaysrussianhockey.files.wordpress.com/2017/09/markovakbars-2.jpg",
-      description: "PSG football club player",
-    },
-    {
-      name: "Leo Messi",
-      image:
-        "https://cdn.shopify.com/s/files/1/0252/7490/8726/files/IMG-20180902-WA0035_480x480.jpg?v=1618439451",
-      description: "PSG football club player",
-    },
-    {
-      name: "Aleksandr Volkov",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Aleksandr_Volkov2.jpg/220px-Aleksandr_Volkov2.jpg",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Will Clyburn",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Will_Clyburn_21_PBC_CSKA_Moscow_EuroLeague_20180316_%281%29.jpg/450px-Will_Clyburn_21_PBC_CSKA_Moscow_EuroLeague_20180316_%281%29.jpg",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Angela vikim",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Angela vikim",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Angela vikim",
-      description: "Volley ball club player",
-    },
-    {
-      name: "Angela vikim",
-      description: "Volley ball club player",
-    },
-  ],
-}) {
+function PopularCarousel({ list = celebrities }) {
   // Reference to swiper
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -63,15 +16,27 @@ function PopularCarousel({
   // list length
   let listLength = list.length;
 
+  // url location
+  const navigate = useNavigate();
+
+  // handle
+  const goToProfile = (value) => {
+    navigate(`/profile/${value}`);
+  };
+
   if (listLength > 0) {
     let items = list.map((item, index) => (
       <SwiperSlide key={`slide-${index}`}>
         {
-          <Card
-            name={item.name}
-            description={item.description}
-            image={item.image}
-          />
+          <div onClick={() => goToProfile(item.id)}>
+            <Card
+              name={item.name}
+              description={item.description}
+              image={item.image}
+              hoverable={true}
+              extra={null}
+            />
+          </div>
         }
       </SwiperSlide>
     ));
@@ -139,6 +104,7 @@ function PopularCarousel({
       </div>
     );
   }
+
   return null;
 }
 

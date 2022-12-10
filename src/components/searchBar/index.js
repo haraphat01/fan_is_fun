@@ -11,7 +11,7 @@ function SearchBar({ placeholder = "" }) {
 
   // handle
   const handleSearch = (value) => {
-    navigate(`search?stock=${value}`);
+    navigate(`search?celeb=${value}`);
   };
 
   return (

@@ -11,7 +11,7 @@ export default function MainLayout({ children }) {
       {children}
 
       {/* footer */}
-      <footer className="container bottom-0 py-4 border-top">
+      <footer className="container bottom-0 py-4 border-top mt-4">
         <div className="row">
           <div className="col-12 col-md-6 fw-bold">FanIsFun Limited</div>
           <div className="col-12 col-md-6 text-end">
