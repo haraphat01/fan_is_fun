@@ -5,26 +5,25 @@ const data = {
   title: "FAQ",
   rows: [
     {
-      title: "Lorem ipsum dolor sit amet,",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
+      title: "What is Fan is Fun ?",
+      content: `Fan is fun, is a fan engagement platform. Where sports fans can engage actively in their team's sport life and eventually chat, video call with players. We also provide you with sport merchs. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
               ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-              Fusce sed commodo purus, at tempus turpis.`,
+              In maximus cursus lorem..`,
     },
     {
-      title: "Nunc maximus, magna at ultricies elementum",
+      title: "How can fans engage in team life ?",
       content:
         "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
     },
     {
-      title: "Curabitur laoreet, mauris vel blandit fringilla",
+      title: "Can you really chat and video call with sport celebrities ?",
       content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
             Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
             Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
             Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
     },
     {
-      title: "What is the package version",
+      title: "How to get started ?",
       content: <p>current version is 1.2.1</p>,
     },
   ],

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Rate, Tag, Button, Empty } from "antd";
 import {
   UserOutlined,
@@ -10,8 +10,12 @@ import {
 import { Fade } from "react-awesome-reveal";
 import PopularList from "../../components/popularList";
 import sportBg from "../../../src/assets/images/profile-bg.jpg";
-import celebrities from "../../mockApi/celebData";
+import mockPlayers from "../../mockApi/celebData";
+import mockTeams from "../../mockApi/mockTeams";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+const celebrities = [...mockPlayers, ...mockTeams];
 
 export default function Profile({ props }) {
   // const profile = {
@@ -33,6 +37,13 @@ export default function Profile({ props }) {
   let { userId } = useParams();
   // get profile from mock
   const profile = celebrities.find((x) => x.id == userId);
+
+  // hook
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   if (!profile) {
     return (
@@ -70,7 +81,7 @@ export default function Profile({ props }) {
                 <Avatar
                   size={150}
                   src={profile.image}
-                  className={"shadow-lg"}
+                  className={"shadow"}
                   icon={<UserOutlined />}
                 />
                 <Rate allowHalf defaultValue={profile.rate} disabled />

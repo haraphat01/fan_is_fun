@@ -11,6 +11,8 @@ import MainLayout from "./layouts/mainLayout";
 import HomePage from "./containers/homepage/Home";
 import Search from "./containers/search";
 import Profile from "./containers/profile";
+import Teams from "./containers/teams";
+import Players from "./containers/players";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path="/profile/:userId" element={<Profile />}></Route>
+          <Route path="/teams" element={<Teams />}></Route>
+          <Route path="/players" element={<Players />}></Route>
         </Routes>
       </MainLayout>
     </BrowserRouter>

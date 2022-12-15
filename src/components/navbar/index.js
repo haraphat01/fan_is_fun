@@ -14,7 +14,7 @@ function Navbar({
   links = [
     {
       label: "Upcoming evevnts",
-      url: "/events",
+      url: "/#",
     },
     {
       label: "Teams",
@@ -41,61 +41,63 @@ function Navbar({
     setIsSignedIn(false);
   };
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand text-white">
-        <div className="d-flex aling-items-center me-auto">
-          <div className="d-flex align-items-center me-4">
-            <img src={logo} height={30} className={"me-2"} />
-            <Link to="/" className="brand-name me-auto">
-              FanisFun
-            </Link>
+    <div className="bg-light">
+      <div className="container ">
+        <nav className="navbar navbar-expand text-white ">
+          <div className="d-flex aling-items-center me-auto">
+            <div className="d-flex align-items-center me-4">
+              <img src={logo} height={30} className={"me-2"} />
+              <Link to="/" className="brand-name me-auto">
+                FanisFun
+              </Link>
+            </div>
+            <SearchBar placeholder={"Type team name...."} />
           </div>
-          <SearchBar placeholder={"Type team name...."} />
-        </div>
 
-        <ul className="d-none d-md-flex navbar-nav">
-          {links.length > 0 &&
-            links.map((link, key) => (
-              <li className="nav-link" key={key}>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? "navlink isActive" : "navlink"
-                  }
-                  to={link.url}
-                >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-        </ul>
-        <div className="d-flex align-items-center ">
-          <SoundFilled
-            size={40}
-            style={{ color: "black" }}
-            className={"mx-3"}
-          />
-          <SettingFilled
-            size={40}
-            style={{ color: "black" }}
-            className={"mx-3"}
-          />
-          {isSignedIn ? (
-            <Button className="login-button" onClick={responseGoogleLogout}>
-              Log out
-            </Button>
-          ) : (
-            <GoogleLogin
-              onSuccess={(response) => {
-                // console.log(response);
-                responseGoogle(response);
-              }}
-              onError={() => {
-                console.log("Login Failed");
-              }}
+          <ul className="d-none d-md-flex navbar-nav">
+            {links.length > 0 &&
+              links.map((link, key) => (
+                <li className="nav-link" key={key}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "navlink isActive" : "navlink"
+                    }
+                    to={link.url}
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+          </ul>
+          <div className="d-flex align-items-center ">
+            <SoundFilled
+              size={40}
+              style={{ color: "black" }}
+              className={"mx-3"}
             />
-          )}
-        </div>
-      </nav>
+            <SettingFilled
+              size={40}
+              style={{ color: "black" }}
+              className={"mx-3"}
+            />
+            {isSignedIn ? (
+              <Button className="login-button" onClick={responseGoogleLogout}>
+                Log out
+              </Button>
+            ) : (
+              <GoogleLogin
+                onSuccess={(response) => {
+                  // console.log(response);
+                  responseGoogle(response);
+                }}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
+            )}
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }
