@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import { GoogleLogin } from '@react-oauth/google';
 import { useState } from 'react';
-import GoogleLogout from 'react-google-login';
+
 
 function Navbar({
   links = [
@@ -27,10 +27,11 @@ function Navbar({
   ],
 }) {
   let [isSignedIn, setIsSignedIn] = useState(false);
-  const responseGoogle = (response) => {
+   const responseGoogle = (response) => {
     setIsSignedIn(true);
     let decode = jwt_decode(response.credential);
     localStorage.setItem('user', JSON.stringify(decode));
+
 
     // client.createIfNotExists(doc).then(() => {
     //   navigate('/', { replace: true });
@@ -39,13 +40,14 @@ function Navbar({
 
   const responseGoogleLogout = () => {
     setIsSignedIn(false);
+    localStorage.removeItem('user');
   };
   return (
     <div className="container">
       <nav className="navbar navbar-expand text-white">
         <div className="d-flex aling-items-center me-auto">
           <div className="d-flex align-items-center me-4">
-            <img src={logo} height={30} className={'me-2'} />
+            <img src={logo} height={30} className={'me-2'} alt="logo"/>
             <Link to="/" className="brand-name me-auto">
               FanisFun
             </Link>
