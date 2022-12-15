@@ -6,7 +6,9 @@ import { SoundFilled, SettingFilled } from '@ant-design/icons';
 import SearchBar from '../searchBar';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+import { useState } from 'react';
+import GoogleLogout from 'react-google-login';
 
 function Navbar({
   links = [
@@ -24,17 +26,19 @@ function Navbar({
     },
   ],
 }) {
+  let [isSignedIn, setIsSignedIn] = useState(false);
   const responseGoogle = (response) => {
-   
+    setIsSignedIn(true);
     let decode = jwt_decode(response.credential);
     localStorage.setItem('user', JSON.stringify(decode));
-    const { name, picture, sub } = decode;
-    console.log(decode);
-  
 
     // client.createIfNotExists(doc).then(() => {
     //   navigate('/', { replace: true });
     // });
+  };
+
+  const responseGoogleLogout = () => {
+    setIsSignedIn(false);
   };
   return (
     <div className="container">
@@ -75,16 +79,21 @@ function Navbar({
             style={{ color: 'black' }}
             className={'mx-3'}
           />
-
-          <GoogleLogin
-            onSuccess={(response) => {
-              // console.log(response);
-              responseGoogle(response);
-            }}
-            onError={() => {
-              console.log('Login Failed');
-            }}
-          />
+          {isSignedIn ? (
+            <Button className="login-button" onClick={responseGoogleLogout}>
+              Log out
+            </Button>
+          ) : (
+            <GoogleLogin
+              onSuccess={(response) => {
+                // console.log(response);
+                responseGoogle(response);
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+            />
+          )}
         </div>
       </nav>
     </div>
