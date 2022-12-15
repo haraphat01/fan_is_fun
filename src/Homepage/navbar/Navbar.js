@@ -4,7 +4,9 @@ import searchIcon from '../../assets/images/search_icon.jpg';
 import notification from '../../assets/images/notification.svg';
 import setting from '../../assets/images/setting.svg';
 
+
 export default function Navbar() {
+ 
   return (
     <div className=" nav-bar">
       <div className="container">
@@ -30,7 +32,11 @@ export default function Navbar() {
               />
               <img src={setting} alt="search" className="settings-icon" />
             </div>
-            <button className="login-button">Log in</button>
+            <button className="login-button">
+              {' '}
+             
+              
+            </button>
           </div>
         </div>
       </div>
