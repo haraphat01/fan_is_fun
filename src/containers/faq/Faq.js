@@ -1,6 +1,3 @@
-<<<<<<< HEAD:src/containers/faq/Faq.js
-import React from "react";
-=======
 import React from 'react';
 import faq from "../faq/faq.css"
 import { useEffect, useState } from 'react';
@@ -9,7 +6,6 @@ import footercontent from '../../assets/images/footercontent1.svg';
 import mail from '../../assets/images/mail.svg';
 import vk from '../../assets/images/vk.svg';
 import instagram from '../../assets/images/instagram.svg';
->>>>>>> main:src/Homepage/faq/Faq.js
 
 
 const data = {
@@ -61,10 +57,6 @@ export default function Faqs() {
       <div className="container mt-5">
         <Faq data={data} styles={styles} config={config} />
       </div>
-<<<<<<< HEAD:src/containers/faq/Faq.js
-      <div className="div">
-        <p>FAQ</p>
-=======
 
       <div className="d-flex justify-content-around mt-5 footer">
         <img src={footercontent} alt="footer" />
@@ -73,7 +65,6 @@ export default function Faqs() {
           <img src={vk} alt="footer" />
           <img src={instagram} alt="footer" />
         </div>
->>>>>>> main:src/Homepage/faq/Faq.js
       </div>
     </div>
   );
