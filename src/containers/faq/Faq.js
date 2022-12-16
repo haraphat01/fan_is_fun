@@ -1,5 +1,12 @@
-import React from "react";
-import Faq from "react-faq-component";
+import React from 'react';
+import faq from "../faq/faq.css"
+import { useEffect, useState } from 'react';
+import Faq from 'react-faq-component';
+import footercontent from '../../assets/images/footercontent1.svg';
+import mail from '../../assets/images/mail.svg';
+import vk from '../../assets/images/vk.svg';
+import instagram from '../../assets/images/instagram.svg';
+
 
 const data = {
   title: "FAQ",
@@ -45,8 +52,19 @@ const config = {
 
 export default function Faqs() {
   return (
-    <div className="container mt-5">
-      <Faq data={data} styles={styles} config={config} />
+    <div className="div">
+      <div className="container mt-5">
+        <Faq data={data} styles={styles} config={config} />
+      </div>
+
+      <div className="d-flex justify-content-around mt-5 footer">
+        <img src={footercontent} alt="footer" />
+        <div className="">
+          <img src={mail} alt="footer" />
+          <img src={vk} alt="footer" />
+          <img src={instagram} alt="footer" />
+        </div>
+      </div>
     </div>
   );
 }
