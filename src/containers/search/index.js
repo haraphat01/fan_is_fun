@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
-import Card from "../../components/popularList/card";
-import mockPlayers from "../../mockApi/celebData";
-import mockTeams from "../../mockApi/mockTeams";
-import { useNavigate } from "react-router-dom";
-import { Tag, Collapse, Slider, Radio, Space, Skeleton } from "antd";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Card from '../../components/popularList/card';
+import mockPlayers from '../../mockApi/celebData';
+import mockTeams from '../../mockApi/mockTeams';
+import { useNavigate } from 'react-router-dom';
+import { Tag, Collapse, Slider, Radio, Space, Skeleton } from 'antd';
+import { useLocation } from 'react-router-dom';
 
 const { CheckableTag } = Tag;
 const { Panel } = Collapse;
 
 const celebrities = [...mockPlayers, ...mockTeams];
 
-const tagsfilters = ["Premier League", "World cup", "NBA", "Hockey cup"];
+const tagsfilters = ['Premier League', 'World cup', 'NBA', 'Hockey cup'];
 
 export default function ResultPage() {
   const [loading, setLoading] = useState(true);
-  const [selectedTags, setSelectedTags] = useState(["Books"]);
-  const [value, setValue] = useState(1);
+  const [selectedTags, setSelectedTags] = useState(['Books']);
+  const [value1, setValue1] = useState(1);
+  const [value2, setValue2] = useState(1);
+  const [value3, setValue3] = useState(1);
 
   // hook
   const { pathname } = useLocation();
@@ -31,9 +33,20 @@ export default function ResultPage() {
     }, 2000);
   });
 
-  const onChange = (e) => {
-    console.log("radio checked", e.target.value);
-    setValue(e.target.value);
+  const onChange1 = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue1(e.target.value);
+    _fakeCall();
+  };
+  const onChange2 = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue2(e.target.value);
+    _fakeCall();
+  };
+  const onChange3 = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue3(e.target.value);
+    _fakeCall();
   };
 
   const _onPriceChange = (range) => {
@@ -70,12 +83,8 @@ export default function ResultPage() {
       <div className={`row mt-4`}>
         {/* filter */}
         <div className={`col-4`}>
-          <h3 style={{ color: "#d5d5d5" }}>Filters</h3>
-          <Collapse
-            classname={"mt-4"}
-            defaultActiveKey={["1"]}
-            // onChange={onChange}
-          >
+          <h3 style={{ color: '#d5d5d5' }}>Filters</h3>
+          <Collapse classname={'mt-4'} defaultActiveKey={['1']}>
             <Panel header="Price" key="1">
               <p>
                 <Slider
@@ -89,46 +98,36 @@ export default function ResultPage() {
             </Panel>
             <Panel header="Sports" key="2">
               <p>
-                <Radio.Group onChange={onChange} value={value}>
+                <Radio.Group onChange={onChange1} value={value1}>
                   <Space direction="vertical">
-                    <Radio value={"Football"}>Football</Radio>
-                    <Radio value={"Volley"}>Volley</Radio>
-                    <Radio value={"Basketball"}>Basketball</Radio>
-                    <Radio value={"Hockey"}>Hockey</Radio>
+                    <Radio value={'1'}>Football</Radio>
+                    <Radio value={'2'}>Volley</Radio>
+                    <Radio value={'3'}>Basketball</Radio>
+                    <Radio value={'4'}>Hockey</Radio>
                   </Space>
                 </Radio.Group>
               </p>
             </Panel>
             <Panel header="Top Teams" key="3">
               <p>
-                <Radio.Group
-                  onChange={() => {
-                    _fakeCall();
-                  }}
-                  value={value}
-                >
+                <Radio.Group onChange={onChange2} value={value2}>
                   <Space direction="vertical">
-                    <Radio value={"Football"}>Argentina</Radio>
-                    <Radio value={"Volley"}>Russia</Radio>
-                    <Radio value={"Basketball"}>Cameroon</Radio>
-                    <Radio value={"Hockey"}>Nigeria</Radio>
+                    <Radio value={'1'}>Argentina</Radio>
+                    <Radio value={'2'}>Russia</Radio>
+                    <Radio value={'3'}>Cameroon</Radio>
+                    <Radio value={'4'}>Nigeria</Radio>
                   </Space>
                 </Radio.Group>
               </p>
             </Panel>
             <Panel header="Top Players" key="4">
               <p>
-                <Radio.Group
-                  onChange={() => {
-                    _fakeCall();
-                  }}
-                  value={value}
-                >
+                <Radio.Group onChange={onChange3} value={value3}>
                   <Space direction="vertical">
-                    <Radio value={"Football"}>Leonel Messi</Radio>
-                    <Radio value={"Volley"}>Ronaldo</Radio>
-                    <Radio value={"Basketball"}>Abramov Nikita</Radio>
-                    <Radio value={"Hockey"}>Pitson borellio</Radio>
+                    <Radio value={'1'}>Leonel Messi</Radio>
+                    <Radio value={'2'}>Ronaldo</Radio>
+                    <Radio value={'3'}>Abramov Nikita</Radio>
+                    <Radio value={'4'}>Pitson borellio</Radio>
                   </Space>
                 </Radio.Group>
               </p>
@@ -138,12 +137,12 @@ export default function ResultPage() {
         {/* main */}
         <div className={`col-8`}>
           <div className={`mb-5`}>
-            <h3 style={{ color: "#d5d5d5" }}>Popular competitions</h3>
+            <h3 style={{ color: '#d5d5d5' }}>Popular competitions</h3>
             <div className="d-flex">
               {tagsfilters.map((tag) => (
                 <CheckableTag
                   key={tag}
-                  className={"mr-3 border fs-6"}
+                  className={'mr-3 border fs-6'}
                   checked={selectedTags.indexOf(tag) > -1}
                   onChange={(checked) => handleChange(tag, checked)}
                 >
@@ -152,7 +151,7 @@ export default function ResultPage() {
               ))}
             </div>
           </div>
-          <h3 style={{ color: "#d5d5d5" }}>Search results</h3>
+          <h3 style={{ color: '#d5d5d5' }}>Search results</h3>
 
           {/* loading  */}
           {loading && (

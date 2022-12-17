@@ -3,10 +3,10 @@ import SportList from '../../components/sportlist';
 import HeaderSlider from '../../components/headerSlider';
 import PopularList from '../../components/popularList';
 import img_signupbg from '../../assets/images/signup-bg.jpg';
-import { Fade,Slide } from 'react-awesome-reveal';
+import { Fade, Slide } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import Faq from '../faq/Faq';
+// import Faq from '../faq/Faq';
 import {
   FileProtectOutlined,
   VideoCameraOutlined,
@@ -53,15 +53,6 @@ export default function Home() {
                       Sign up
                     </Button>
                   </div>
-                  <div
-                    className={'col-8 py-2'}
-                    style={{
-                      background: `url(${img_signupbg})`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                      minHeight: 320,
-                    }}
-                  ></div>
                 </div>
                 <div
                   className={'col-8 py-2'}
@@ -89,7 +80,7 @@ export default function Home() {
                 >
                   {isSignedIn ? (
                     <Link
-                      to="/news"
+                      to="/#"
                       className="d-flex text-dark align-items-center justify-content-center"
                     >
                       <span>Daily sports news</span>
@@ -149,7 +140,7 @@ export default function Home() {
           <PopularList />
         </section>
         {/* faq */}
-        <Faq />
+        {/* <Faq /> */}
       </div>
     </>
   );
